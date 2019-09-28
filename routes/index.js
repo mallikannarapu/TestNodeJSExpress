@@ -3,7 +3,7 @@ var router = express.Router();
 var app = express.Router();
 var mongodb= require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://heroku_qxvtfkcq:ag1t3urn8k8h4pp9of4uakcnfn@ds351987.mlab.com:51987/heroku_qxvtfkcq';
+var url = 'mongodb://heroku_q5cnqgl7:99etrpoqah9qeira2ogh00phbe@ds133094.mlab.com:33094/heroku_q5cnqgl7';
 
 /* GET home page. */
 
@@ -22,7 +22,7 @@ router.get('/mongodb', function (request, response) {
     console.log(db);
     if(err) throw err;
     //get collection of routes
-    var Routes = db.db('heroku_qxvtfkcq').collection('Routes');
+    var Routes = db.db('heroku_q5cnqgl7').collection('Routes');
     console.log(Routes)
     //get all Routes with frequency >=1
     Routes.find({ frequency : { $gte: '1' } }).sort({ name: 1 }).toArray(function (err, docs) {
